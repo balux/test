@@ -3,17 +3,7 @@ pipeline {
   stages {
     stage('Compile') {
       steps {
-        parallel(
-          "Compile": {
-            echo 'compile'
-            
-          },
-          "bla": {
-            withMaven()
-            sh 'echo "hallo"'
-            
-          }
-        )
+        echo 'compile'
       }
     }
     stage('Test') {
