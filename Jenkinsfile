@@ -25,6 +25,10 @@ pipeline {
     stage('Deploy Production') {
       steps {
         echo 'hallo'
+        waitUntil() {
+          sh 'echo hallo'
+        }
+        
       }
     }
   }
