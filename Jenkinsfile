@@ -1,9 +1,24 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'npm'
+    }
+    
+  }
   stages {
     stage('Compile') {
-      steps {
-        echo 'compile'
+      parallel {
+        stage('Compile') {
+          steps {
+            echo 'compile'
+          }
+        }
+        stage('npm') {
+          steps {
+            sh '''npm install
+'''
+          }
+        }
       }
     }
     stage('Test') {
