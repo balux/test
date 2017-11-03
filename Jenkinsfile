@@ -1,16 +1,15 @@
 pipeline {
-  agent {
-    node {
-      label 'npm'
-    }
-    
-  }
+  agent any
   stages {
     stage('Compile') {
       parallel {
         stage('Compile') {
           steps {
             echo 'compile'
+            script {
+              trasdfa
+            }
+            
           }
         }
         stage('npm') {
