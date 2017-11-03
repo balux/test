@@ -6,10 +6,7 @@ pipeline {
         stage('Compile') {
           steps {
             echo 'compile'
-            script {
-              trasdfa
-            }
-            
+            library 'nextlayerci'
           }
         }
         stage('npm') {
