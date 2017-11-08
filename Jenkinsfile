@@ -23,8 +23,17 @@ pipeline {
       }
     }
     stage('Publish Snapshot') {
-      steps {
-        echo 'hallo'
+      parallel {
+        stage('Publish Snapshot') {
+          steps {
+            echo 'hallo'
+          }
+        }
+        stage('Test') {
+          steps {
+            echo 'hallo'
+          }
+        }
       }
     }
     stage('QA') {
